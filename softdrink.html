@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Drinks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .drink {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+        }
+        .drink img {
+            width: 200px; /* Set the desired width */
+            height: 200px; /* Set the desired height */
+            object-fit: cover;
+            border-radius: 5%;
+        }
+        .drink .content {
+            width: 45%;
+        }
+        .drink .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart {
+            margin-top: 20px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .cart h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="drink" id="coca-cola">
+        <div class="content">
+            <h2>COCA-COLA</h2>
+            <p>CARBONATED WATER.</p>
+        </div>
+        <img src="coca-cola.jpg" alt="Coca-Cola">
+        <button class="add-to-cart" onclick="addToCart('Coca-Cola')">Add to Cart</button>
+    </div>
+    <div class="drink" id="coca-cola-zero">
+        <div class="content">
+            <h2>COCA-COLA ZERO SUGAR</h2>
+            <p>CARBONATED WATER.</p>
+        </div>
+        <img src="coca-cola-zero.jpg" alt="Coca-Cola Zero Sugar">
+        <button class="add-to-cart" onclick="addToCart('Coca-Cola Zero Sugar')">Add to Cart</button>
+    </div>
+    <div class="drink" id="diet-coke">
+        <div class="content">
+            <h2>DIET COKE</h2>
+            <p>CARBONATED WATER.</p>
+        </div>
+        <img src="diet-coke.jpg" alt="Diet Coke">
+        <button class="add-to-cart" onclick="addToCart('Diet Coke')">Add to Cart</button>
+    </div>
+    <div class="drink" id="sprite">
+        <div class="content">
+            <h2>SPRITE</h2>
+            <p>CARBONATED WATER.</p>
+        </div>
+        <img src="sprite.jpg" alt="Sprite">
+        <button class="add-to-cart" onclick="addToCart('Sprite')">Add to Cart</button>
+    </div>
+    <div class="drink" id="thums-up">
+        <div class="content">
+            <h2>THUMS UP</h2>
+            <p>CARBONATED WATER.</p>
+        </div>
+        <img src="thums-up.jpg" alt="Thums Up">
+        <button class="add-to-cart" onclick="addToCart('Thums Up')">Add to Cart</button>
+    </div>
+    <div class="drink" id="limca">
+        <div class="content">
+            <h2>LIMCA</h2>
+            <p>CARBONATED WATER.</p>
+        </div>
+        <img src="limca.jpg" alt="Limca">
+        <button class="add-to-cart" onclick="addToCart('Limca')">Add to Cart</button>
+    </div>
+    <div class="drink" id="limca-sportz">
+        <div class="content">
+            <h2>LIMCA SPORTZ</h2>
+            <p>READY TO SERVE FRUIT BEVERAGE.</p>
+        </div>
+        <img src="limca-sportz.jpg" alt="Limca Sportz">
+        <button class="add-to-cart" onclick="addToCart('Limca Sportz')">Add to Cart</button>
+    </div>
+    <div class="drink" id="fanta">
+        <div class="content">
+            <h2>FANTA</h2>
+            <p>CARBONATED WATER.</p>
+        </div>
+        <img src="fanta.jpg" alt="Fanta">
+        <button class="add-to-cart" onclick="addToCart('Fanta')">Add to Cart</button>
+    </div>
+
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const drinks = document.querySelectorAll('.drink');
+            drinks.forEach((drink, index) => {
+                setTimeout(() => {
+                    drink.style.opacity = 1;
+                    drink.style.transition = 'opacity 0.5s ease-in';
+                }, index * 200);
+            });
+        });
+
+        function addToCart(drinkName) {
+            const cartItems = document.getElementById('cart-items');
+            const cartItem = document.createElement('li');
+            cartItem.textContent = drinkName;
+            cartItems.appendChild(cartItem);
+        }
+    </script>
+</body>
+</html>

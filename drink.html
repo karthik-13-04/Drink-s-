@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #ccbea4;
+        }
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .hero div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #9a624c;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ccbea4;
+            color: #442c26;
+        }
+        .hero div img {
+            width: 200px; /* Set the desired width */
+            height: 200px; /* Set the desired height */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+            border-radius: 10%;
+        }
+        .hero div .content {
+            width: 45%;
+        }
+        footer {
+            background-color: #ccbea4;
+            color: #442c26;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 60%;
+            z-index: 1000;
+            /* display: flex; */
+            justify-content: space-between;
+            align-items: center;
+            width: 75%;
+            margin: 125px 0 0 125px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+        h2 {
+            padding-right: 15px;
+            color: #9b261b;
+        }
+        a {
+            text-decoration: none;
+            color: #442c26 ;
+            gap: 20%;
+        }
+        p {
+            color: #9b261b;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="hero">
+      <a href="beer.html">
+        <div id="beer-drinks">
+            <div class="content">
+                <h2>Beer</h2>
+                <p>Explore our selection of premium beers, brewed to perfection.</p>
+                <a href="beer.html" id="beer-drinks-link">Learn More</a>
+            </div>
+            <img src="beer-drinks.jpg" alt="Beer Drinks">
+        </div>
+      </a>
+      <a href="wine.html">
+        <div id="wine-drinks">
+            <div class="content">
+                <h2>Wine</h2>
+                <p>Indulge in our exquisite collection of wines, crafted for every occasion.</p>
+                <a href="wine.html" id="wine-drinks-link">Learn More</a>
+            </div>
+            <img src="wine-drinks.jpg" alt="Wine Drinks">
+        </div>
+      </a>
+      <a href="softdrink.html">
+        <div id="soft-drinks">
+            <div class="content">
+                <h2>Soft Drinks</h2>
+                <p>Discover our range of refreshing soft drinks made with the finest ingredients.</p>
+                <a href="softdrink.html" id="soft-drinks-link">Learn More</a>
+            </div>
+            <img src="soft-drinks.jpg" alt="Soft Drinks">
+        </div>
+      </a>
+    </div>
+    <footer>
+        <div>
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    </footer>
+    <script>
+        document.getElementById('soft-drinks-link').addEventListener('click', function() {
+            window.location.href = 'soft-drinks.html';
+        });
+        document.getElementById('beer-drinks-link').addEventListener('click', function() {
+            window.location.href = 'beer-drinks.html';
+        });
+        document.getElementById('wine-drinks-link').addEventListener('click', function() {
+            window.location.href = 'wine-drinks.html';
+        });
+    </script>
+</body>
+</html>

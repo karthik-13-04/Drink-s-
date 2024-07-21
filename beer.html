@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Beers </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .drink {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+        }
+        .drink img {
+            width: 200px; /* Set the desired width */
+            height: 200px; /* Set the desired height */
+            object-fit: cover; /* Ensure the image covers the area without distortion */
+            border-radius: 10%;
+        }
+        .drink .content {
+            width: 45%;
+        }
+        .drink .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart {
+            margin-top: 20px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .cart h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="drink" id="budweiser">
+        <div class="content">
+            <h2>Budweiser</h2>
+            <p><strong>Type:</strong> Lager</p>
+            <p><strong>ABV:</strong> 5%</p>
+            <p><strong>Details:</strong> An American brand that has a significant presence in India, Budweiser is known for its smooth and light flavor, making it a popular choice for many beer drinkers.</p>
+        </div>
+        <img src="budweiser.jpg" alt="Budweiser">
+        <button class="add-to-cart" onclick="addToCart('Budweiser')">Add to Cart</button>
+    </div>
+    <div class="drink" id="carlsberg">
+        <div class="content">
+            <h2>Carlsberg</h2>
+            <p><strong>Type:</strong> Lager</p>
+            <p><strong>ABV:</strong> 5%</p>
+            <p><strong>Details:</strong> Carlsberg is a Danish beer that's well-regarded for its quality and consistency. It's a premium beer that's smooth and slightly malty.</p>
+        </div>
+        <img src="carlsberg.jpg" alt="Carlsberg">
+        <button class="add-to-cart" onclick="addToCart('Carlsberg')">Add to Cart</button>
+    </div>
+    <div class="drink" id="tuborg">
+        <div class="content">
+            <h2>Tuborg</h2>
+            <p><strong>Type:</strong> Lager</p>
+            <p><strong>ABV:</strong> 4.6%</p>
+            <p><strong>Details:</strong> Another popular Danish beer, Tuborg is known for its easy-drinking nature and mild taste. It's a go-to choice for many beer lovers.</p>
+        </div>
+        <img src="tuborg.jpg" alt="Tuborg">
+        <button class="add-to-cart" onclick="addToCart('Tuborg')">Add to Cart</button>
+    </div>
+    <div class="drink" id="heineken">
+        <div class="content">
+            <h2>Heineken</h2>
+            <p><strong>Type:</strong> Lager</p>
+            <p><strong>ABV:</strong> 5%</p>
+            <p><strong>Details:</strong> This Dutch beer is famous worldwide and has a strong presence in India. Heineken is appreciated for its balanced taste and slightly bitter finish.</p>
+        </div>
+        <img src="heineken.jpg" alt="Heineken">
+        <button class="add-to-cart" onclick="addToCart('Heineken')">Add to Cart</button>
+    </div>
+    <div class="drink" id="haywards-5000">
+        <div class="content">
+            <h2>Haywards 5000</h2>
+            <p><strong>Type:</strong> Strong Lager</p>
+            <p><strong>ABV:</strong> 7%</p>
+            <p><strong>Details:</strong> Haywards 5000 is known for its high alcohol content and bold flavor. It's a strong beer that's popular in many regions of India.</p>
+        </div>
+        <img src="haywards-5000.jpg" alt="Haywards 5000">
+        <button class="add-to-cart" onclick="addToCart('Haywards 5000')">Add to Cart</button>
+    </div>
+    <div class="drink" id="royal-challenge">
+        <div class="content">
+            <h2>Royal Challenge</h2>
+            <p><strong>Type:</strong> Strong Lager</p>
+            <p><strong>ABV:</strong> 5% - 8%</p>
+            <p><strong>Details:</strong> A premium beer with a smooth taste, Royal Challenge is a favorite among those who enjoy a stronger lager. It's known for its rich flavor and quality.</p>
+        </div>
+        <img src="royal-challenge.jpg" alt="Royal Challenge">
+        <button class="add-to-cart" onclick="addToCart('Royal Challenge')">Add to Cart</button>
+    </div>
+    <div class="drink" id="knock-out">
+        <div class="content">
+            <h2>Knock Out</h2>
+            <p><strong>Type:</strong> Strong Lager</p>
+            <p><strong>ABV:</strong> 8%</p>
+            <p><strong>Details:</strong> True to its name, Knock Out is a strong beer that's popular in the Indian market. It's known for its high alcohol content and robust flavor.</p>
+        </div>
+        <img src="knock-out.jpg" alt="Knock Out">
+        <button class="add-to-cart" onclick="addToCart('Knock Out')">Add to Cart</button>
+    </div>
+    <div class="drink" id="kingfisher">
+        <div class="content">
+            <h2>Kingfisher</h2>
+            <p><strong>Type:</strong> Lager</p>
+            <p><strong>Alcohol by Volume (ABV):</strong> 4.8%</p>
+            <p><strong>Details:</strong> One of the most popular beers in India, Kingfisher is known for its crisp and refreshing taste. It's widely available and often associated with a vibrant social life.</p>
+        </div>
+        <img src="kingfisher.jpg" alt="Kingfisher">
+        <button class="add-to-cart" onclick="addToCart('Kingfisher')">Add to Cart</button>
+    </div>
+    <div class="drink" id="bira-91">
+        <div class="content">
+            <h2>Bira 91</h2>
+            <p><strong>Type:</strong> Wheat Beer, Blonde Lager, IPA</p>
+            <p><strong>ABV:</strong> 4.5% - 7.5%</p>
+            <p><strong>Details:</strong> Bira 91 has quickly become a favorite among urban beer enthusiasts with its unique taste and branding. It's available in various styles including wheat, blonde lager, and IPA.</p>
+        </div>
+        <img src="bira-91.jpg" alt="Bira 91">
+        <button class="add-to-cart" onclick="addToCart('Bira-91')">Add to Cart</button>
+    </div>
+    <div class="drink" id="simba">
+        <div class="content">
+            <h2>Simba</h2>
+            <p><strong>Type:</strong> Stout, Wheat, Strong Lager</p>
+            <p><strong>ABV:</strong> 4.5% - 7.5%</p>
+            <p><strong>Details:</strong> Simba is an emerging craft beer brand in India offering a variety of styles including stout, wheat, and strong lager. It's appreciated for its quality and distinctive taste.</p>
+        </div>
+        <img src="simba.jpg" alt="Simba">
+        <button class="add-to-cart" onclick="addToCart('Simba')">Add to Cart</button>
+    </div>
+
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const drinks = document.querySelectorAll('.drink');
+            drinks.forEach((drink, index) => {
+                setTimeout(() => {
+                    drink.style.opacity = 1;
+                    drink.style.transition = 'opacity 0.5s ease-in';
+                }, index * 200);
+            });
+        });
+
+        function addToCart(drinkName) {
+            const cartItems = document.getElementById('cart-items');
+            const cartItem = document.createElement('li');
+            cartItem.textContent = drinkName;
+            cartItems.appendChild(cartItem);
+        }
+    </script>
+</body>
+</html>

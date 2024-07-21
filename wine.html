@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Wines in India</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .drink {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+        }
+        .drink img {
+            width: 200px; /* Set the desired width */
+            height: 200px; /* Set the desired height */
+            object-fit: cover;
+            border-radius: 5%;
+        }
+        .drink .content {
+            width: 45%;
+        }
+        .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart {
+            margin-top: 20px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .cart h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="drink" id="fratelli-sette">
+        <div class="content">
+            <h2>Fratelli Sette</h2>
+            <p><strong>Type:</strong> Red Wine</p>
+            <p><strong>ABV:</strong> 14.5%</p>
+            <p><strong>Details:</strong> Fratelli Sette is a premium red wine crafted from Sangiovese, Cabernet Sauvignon, and Cabernet Franc. It is known for its complex flavors of dark berries, tobacco, and oak, making it a great choice for special occasions.</p>
+        </div>
+        <img src="fratelli-sette.jpg" alt="Fratelli Sette">
+        <button class="add-to-cart" onclick="addToCart('Fratelli Sette')">Add to Cart</button>
+    </div>
+    <div class="drink" id="sula-rasa-shiraz">
+        <div class="content">
+            <h2>Sula Rasa Shiraz</h2>
+            <p><strong>Type:</strong> Red Wine</p>
+            <p><strong>Alcohol by Volume (ABV):</strong> 13.5%</p>
+            <p><strong>Details:</strong> Sula Rasa Shiraz is a premium red wine known for its rich and full-bodied flavor with notes of ripe red berries and spices. It pairs well with red meats and spicy Indian dishes.</p>
+        </div>
+        <img src="sula-rasa-shiraz.jpg" alt="Sula Rasa Shiraz">
+        <button class="add-to-cart" onclick="addToCart('Sula Rasa Shiraz')">Add to Cart</button>
+    </div>
+    <div class="drink" id="grover-zampa-la-reserve">
+        <div class="content">
+            <h2>Grover Zampa La Reserve</h2>
+            <p><strong>Type:</strong> Red Wine</p>
+            <p><strong>ABV:</strong> 13%</p>
+            <p><strong>Details:</strong> Grover Zampa La Reserve is a blend of Cabernet Sauvignon and Shiraz. It has a deep ruby color with flavors of blackcurrant, vanilla, and a hint of chocolate, making it a favorite among red wine enthusiasts.</p>
+        </div>
+        <img src="grover-zampa-la-reserve.jpg" alt="Grover Zampa La Reserve">
+        <button class="add-to-cart" onclick="addToCart('Grover Zampa La Reserve')">Add to Cart</button>
+    </div>
+    <div class="drink" id="york-arros">
+        <div class="content">
+            <h2>York Arros</h2>
+            <p><strong>Type:</strong> Red Wine</p>
+            <p><strong>ABV:</strong> 13.5%</p>
+            <p><strong>Details:</strong> York Arros is a blend of Shiraz and Cabernet Sauvignon. This wine is aged in oak barrels, giving it a robust flavor profile with notes of blackberries, plum, and a hint of spice.</p>
+        </div>
+        <img src="york-arros.jpg" alt="York Arros">
+        <button class="add-to-cart" onclick="addToCart('York Arros')">Add to Cart</button>
+    </div>
+    <div class="drink" id="sula-sauvignon-blanc">
+        <div class="content">
+            <h2>Sula Sauvignon Blanc</h2>
+            <p><strong>Type:</strong> White Wine</p>
+            <p><strong>ABV:</strong> 13%</p>
+            <p><strong>Details:</strong> Sula Sauvignon Blanc is a refreshing white wine with crisp acidity and flavors of green apple, citrus, and tropical fruits. It pairs well with seafood and light salads.</p>
+        </div>
+        <img src="sula-sauvignon-blanc.jpg" alt="Sula Sauvignon Blanc">
+        <button class="add-to-cart" onclick="addToCart('Sula Sauvignon Blanc')">Add to Cart</button>
+    </div>
+    <div class="drink" id="grover-zampa-art-collection-sauvignon-blanc">
+        <div class="content">
+            <h2>Grover Zampa Art Collection Sauvignon Blanc</h2>
+            <p><strong>Type:</strong> White Wine</p>
+            <p><strong>ABV:</strong> 12.5%</p>
+            <p><strong>Details:</strong> This white wine from Grover Zampa's Art Collection series is known for its aromatic bouquet of gooseberries, green peppers, and a hint of asparagus. It is light and refreshing, perfect for warm weather.</p>
+        </div>
+        <img src="grover-zampa-art-collection-sauvignon-blanc.jpg" alt="Grover Zampa Art Collection Sauvignon Blanc">
+        <button class="add-to-cart" onclick="addToCart('Grover Zampa Art Collection Sauvignon Blanc')">Add to Cart</button>
+    </div>
+    <div class="drink" id="fratelli-chenin-blanc">
+        <div class="content">
+            <h2>Fratelli Chenin Blanc</h2>
+            <p><strong>Type:</strong> White Wine</p>
+            <p><strong>ABV:</strong> 12.5%</p>
+            <p><strong>Details:</strong> Fratelli Chenin Blanc is a delightful white wine with flavors of tropical fruits, honey, and a touch of floral notes. It has a balanced acidity, making it versatile for various dishes.</p>
+        </div>
+        <img src="fratelli-chenin-blanc.jpg" alt="Fratelli Chenin Blanc">
+        <button class="add-to-cart" onclick="addToCart('Fratelli Chenin Blanc')">Add to Cart</button>
+    </div>
+    <div class="drink" id="sula-dindori-reserve-shiraz">
+        <div class="content">
+            <h2>Sula Dindori Reserve Shiraz</h2>
+            <p><strong>Type:</strong> Red Wine</p>
+            <p><strong>ABV:</strong> 14%</p>
+            <p><strong>Details:</strong> Sula Dindori Reserve Shiraz is a bold red wine with rich flavors of blackberry, plum, and pepper. It is aged in oak barrels, which adds complexity and depth to its taste.</p>
+        </div>
+        <img src="sula-dindori-reserve-shiraz.jpg" alt="Sula Dindori Reserve Shiraz">
+        <button class="add-to-cart" onclick="addToCart('Sula Dindori Reserve Shiraz')">Add to Cart</button>
+    </div>
+    <div class="drink" id="big-banyan-merlot">
+        <div class="content">
+            <h2>Big Banyan Merlot</h2>
+            <p><strong>Type:</strong> Red Wine</p>
+            <p><strong>ABV:</strong> 13.5%</p>
+            <p><strong>Details:</strong> Big Banyan Merlot is a smooth and velvety red wine with notes of cherries, plums, and a hint of oak. It is a great choice for those who prefer a softer red wine.</p>
+        </div>
+        <img src="big-banyan-merlot.jpg" alt="Big Banyan Merlot">
+        <button class="add-to-cart" onclick="addToCart('Big Banyan Merlot')">Add to Cart</button>
+    </div>
+    <div class="drink" id="krsma-estates-cabernet-sauvignon">
+        <div class="content">
+            <h2>KRSMA Estates Cabernet Sauvignon</h2>
+            <p><strong>Type:</strong> Red Wine</p>
+            <p><strong>ABV:</strong> 14.5%</p>
+            <p><strong>Details:</strong> KRSMA Estates Cabernet Sauvignon is a high-quality red wine with intense flavors of blackcurrant, cherries, and a hint of tobacco. It is well-structured with firm tannins, making it a great wine for aging.</p>
+        </div>
+        <img src="krsma-estates-cabernet-sauvignon.jpg" alt="KRSMA Estates Cabernet Sauvignon">
+        <button class="add-to-cart" onclick="addToCart('KRSMA Estates Cabernet Sauvignon')">Add to Cart</button>
+    </div>
+    
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const drinks = document.querySelectorAll('.drink');
+            drinks.forEach((drink, index) => {
+                setTimeout(() => {
+                    drink.style.opacity = 1;
+                    drink.style.transition = 'opacity 0.5s ease-in';
+                }, index * 200);
+            });
+        });
+
+        function addToCart(wine) {
+            const cartItems = document.getElementById('cart-items');
+            const listItem = document.createElement('li');
+            listItem.textContent = wine;
+            cartItems.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
